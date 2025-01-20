@@ -9,14 +9,14 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-public class DAOTest<T> {
+public class DAO<T> {
     private static Connection conn = ConxDB.getInstance();
     private Class<T> type;
     private Map<String,Object>map;
     private String nomTableau;
 
 
-    public DAOTest(Class<T> type, Map<String,Object>list,String nomTableau) {
+    public DAO(Class<T> type, Map<String,Object>list, String nomTableau) {
         this.type = type;
         this.map = list;
         this.nomTableau = nomTableau;
