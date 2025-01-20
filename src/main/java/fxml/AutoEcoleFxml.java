@@ -5,25 +5,29 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
 public class AutoEcoleFxml {
-    @FXML
-    private TextField nomAutoEcole;
-    @FXML
-    private TextField adresseAutoEcole;
-    @FXML
-    private TextField telAutoEcole;
-    @FXML
-    private TextField emailAutoEcole;
+
+    @FXML private TextField nomField;
+    @FXML private TextField adresseField;
+    @FXML private TextField telephoneField;
+    @FXML private TextField emailField;
 
     @FXML
-    public static AutoEcole saisirAutoEcole() {
-        String nomAutoEcole =nomAutoEcole.getText();
-        String adresseAutoEcole= adresseAutoEcole.getText();
-        int telAutoEcole=telAutoEcole.getText();
-        String emailAutoEcole=emailAutoEcole.getText();
+    public AutoEcole saisirAutoEcole() {
+        // Récupérer les valeurs des champs de texte
+        String nomAutoEcole = nomField.getText();
+        String adresseAutoEcole = adresseField.getText();
+        String emailAutoEcole = emailField.getText();
 
-        return new AutoEcole(nomAutoEcole,adresseAutoEcole,telAutoEcole,emailAutoEcole);
+        // Convertir le texte du téléphone en entier
+        int telAutoEcole = 0;
+        try {
+            telAutoEcole = Integer.parseInt(telephoneField.getText());
+        } catch (NumberFormatException e) {
+            // Gérer l'exception si le numéro de téléphone n'est pas valide
+            System.out.println("Numéro de téléphone invalide.");
+        }
+
+        // Créer un objet AutoEcole et le retourner
+        return new AutoEcole(nomAutoEcole, adresseAutoEcole, telAutoEcole, emailAutoEcole);
     }
-
-
-
 }

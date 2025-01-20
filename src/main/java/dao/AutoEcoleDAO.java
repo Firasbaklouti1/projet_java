@@ -29,4 +29,24 @@ public class AutoEcoleDAO {
         }
         dao.save(autoEcole);
     }
+    public static AutoEcole getAutoEcole() {
+        Statement stmt = null;
+        ResultSet rs = null;
+        String sql = "select * FROM auto_ecole";
+        try {
+            stmt=connection.createStatement();
+            rs=stmt.executeQuery(sql);
+            while (rs.next()) {
+                String nom=rs.getString("nom");
+                String adresse=rs.getString("adresse");
+                Integer numTelephone=rs.getInt("numTelephone");
+                String email=rs.getString("email");
+                return new AutoEcole(nom,adresse,numTelephone,email);
+            }
+
+        }catch(SQLException e) {
+            throw new RuntimeException("cant get auto_ecole");
+        }
+        return null;
+    }
 }

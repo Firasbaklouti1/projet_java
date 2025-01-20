@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Pos?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="fxml.AutoEcoleFxml">
+    <children>
+        <VBox alignment="CENTER" spacing="10" AnchorPane.leftAnchor="50" AnchorPane.rightAnchor="50" AnchorPane.topAnchor="50" AnchorPane.bottomAnchor="50">
+            <!-- Label et champ de saisie pour le nom -->
+            <HBox spacing="10">
+                <Label text="Nom de l'auto-école:" />
+                <TextField fx:id="nomField" promptText="Entrez le nom" />
+            </HBox>
+
+            <!-- Label et champ de saisie pour l'adresse -->
+            <HBox spacing="10">
+                <Label text="Adresse:" />
+                <TextField fx:id="adresseField" promptText="Entrez l'adresse" />
+            </HBox>
+
+            <!-- Label et champ de saisie pour le numéro de téléphone -->
+            <HBox spacing="10">
+                <Label text="Numéro de téléphone:" />
+                <TextField fx:id="telephoneField" promptText="Entrez le numéro" />
+            </HBox>
+
+            <!-- Label et champ de saisie pour l'email -->
+            <HBox spacing="10">
+                <Label text="Email:" />
+                <TextField fx:id="emailField" promptText="Entrez l'email" />
+            </HBox>
+
+            <!-- Bouton pour soumettre -->
+            <Button text="Enregistrer" onAction="#saisirAutoEcole" />
+        </VBox>
+    </children>
+</AnchorPane>
