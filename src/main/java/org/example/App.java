@@ -13,6 +13,7 @@ import java.io.IOException;
  */
 public class App extends Application {
     //hello
+    //yatikom asba louled
     private static Scene scene;
     //sakel
     @Override
