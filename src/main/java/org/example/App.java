@@ -15,7 +15,7 @@ public class App extends Application {
     //hello
     //yatikom asba louled
     private static Scene scene;
-
+    //sakelaaa
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("primary"), 640, 480);
