@@ -45,4 +45,13 @@ public class AutoEcole {
         this.email = email;
     }
 
+    @Override
+    public String toString() {
+        return "AutoEcole{" +
+                "nom='" + nom + '\'' +
+                ", adresse='" + adresse + '\'' +
+                ", numTelephone=" + numTelephone +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }

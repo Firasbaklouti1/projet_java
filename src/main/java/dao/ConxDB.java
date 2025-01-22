@@ -8,7 +8,7 @@ public class ConxDB{
 
     private static Connection connexion;
 
-    private final String DB_URL = "jdbc:mysql://127.0.0.1:3306/test_java";
+    private final String DB_URL = "jdbc:mysql://127.0.0.1:3306/auto_ecole";
     private final String USER = "root";
     private final String PASS = "";
 

@@ -1,12 +1,14 @@
 package fxml;
 
+
 import entities.AutoEcole;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
 public class AutoEcoleFxml {
 
-    @FXML private TextField nomField;
+    @FXML
+    private TextField nomField;
     @FXML private TextField adresseField;
     @FXML private TextField telephoneField;
     @FXML private TextField emailField;
@@ -16,6 +18,7 @@ public class AutoEcoleFxml {
         String nomAutoEcole = nomField.getText();
         String adresseAutoEcole = adresseField.getText();
         String emailAutoEcole = emailField.getText();
+
 
         int telAutoEcole = 0;
         try {
