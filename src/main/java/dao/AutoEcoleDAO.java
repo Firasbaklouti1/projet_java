@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class AutoEcoleDAO {
-    private static Connection connection;
+    private static Connection connection=ConxDB.getInstance();
     public static void save(AutoEcole autoEcole) {
         Map<String,Object>map=new HashMap<>();
         map.put("nom",String.class);
@@ -20,13 +20,27 @@ public class AutoEcoleDAO {
         DAO<AutoEcole>dao=new DAO<>(AutoEcole.class,map,"auto_ecole");
         Statement stmt = null;
         ResultSet rs = null;
-        String sql = "DELETE * FROM auto_ecole";
+        String sql = "DELETE FROM auto_ecole"; // Corrected SQL statement
+
         try {
-            stmt=connection.createStatement();
-            stmt.executeQuery(sql);
+            System.out.println("Preparing to delete records...");
+            stmt = connection.createStatement();
+
+            // Use executeUpdate() instead of executeQuery()
+            int rowsAffected = stmt.executeUpdate(sql);
+            System.out.println("Number of rows deleted: " + rowsAffected);
         } catch (SQLException e) {
-            throw new RuntimeException("cant delete auto_ecole precedente");
+            throw new RuntimeException("Can't delete auto école précédente", e);
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
+
         dao.save(autoEcole);
     }
     public static AutoEcole getAutoEcole() {

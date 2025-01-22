@@ -13,9 +13,14 @@ public class AutoEcoleFxml {
 
     @FXML
     public AutoEcole saisirAutoEcole() {
+        if(nomField==null){
+            System.out.println("Le nom est vide");
+            return new AutoEcole("nan","zkomk",651655,"referferfer@gmailk.com");
+        }
         String nomAutoEcole = nomField.getText();
         String adresseAutoEcole = adresseField.getText();
         String emailAutoEcole = emailField.getText();
+
 
         int telAutoEcole = 0;
         try {

@@ -1,27 +1,35 @@
 package controller;
 
 import entities.AutoEcole;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import service.AutoEcoleService;
 import fxml.AutoEcoleFxml;
+import service.AutoEcoleService;
 
 public class AutoEcoleController {
     private AutoEcoleService autoEcoleService;
     private AutoEcoleFxml autoEcoleFxml;
-    @FXML private Button addAutoEcole;
 
+    @FXML
+    private Button addAutoEcole;
 
-    public AutoEcoleController() {
-        autoEcoleService=new AutoEcoleService();
-        autoEcoleFxml=new AutoEcoleFxml();
+    // Initialiser AutoEcoleFxml
+    @FXML
+    public void initialize() {
+
+        autoEcoleService = new AutoEcoleService();
+        autoEcoleFxml = new AutoEcoleFxml(); // Création de l'instance ici
     }
 
-    public void autoEcoleController() {
-        addAutoEcole.setOnAction(e ->{
-            AutoEcole autoEcole = autoEcoleFxml.saisirAutoEcole();
+    @FXML
+    public void ajouterAutoEcole(ActionEvent event) {
+        // Utiliser AutoEcoleFxml pour récupérer les données
+        AutoEcole autoEcole = autoEcoleFxml.saisirAutoEcole();
 
-            autoEcoleService.ajouteAutoEcole(autoEcole);} );
+        // Ajouter l'auto-école
+        autoEcoleService.ajouteAutoEcole(autoEcole);
 
+        System.out.println("Auto-école ajoutée : " + autoEcole);
     }
 }
