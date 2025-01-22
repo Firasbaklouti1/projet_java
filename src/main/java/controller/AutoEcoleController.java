@@ -9,17 +9,17 @@ import service.AutoEcoleService;
 
 public class AutoEcoleController {
     private AutoEcoleService autoEcoleService;
-    private AutoEcoleFxml autoEcoleFxml;
 
     @FXML
     private Button addAutoEcole;
 
+    @FXML
+    private AutoEcoleFxml autoEcoleFxml=new AutoEcoleFxml(); // FXML injection of AutoEcoleFxml
+
     // Initialiser AutoEcoleFxml
     @FXML
     public void initialize() {
-
         autoEcoleService = new AutoEcoleService();
-        autoEcoleFxml = new AutoEcoleFxml(); // Création de l'instance ici
     }
 
     @FXML

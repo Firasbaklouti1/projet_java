@@ -1,22 +1,20 @@
 package fxml;
 
+
 import entities.AutoEcole;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
 public class AutoEcoleFxml {
 
-    @FXML private TextField nomField;
+    @FXML
+    private TextField nomField;
     @FXML private TextField adresseField;
     @FXML private TextField telephoneField;
     @FXML private TextField emailField;
 
     @FXML
     public AutoEcole saisirAutoEcole() {
-        if(nomField==null){
-            System.out.println("Le nom est vide");
-            return new AutoEcole("nan","zkomk",651655,"referferfer@gmailk.com");
-        }
         String nomAutoEcole = nomField.getText();
         String adresseAutoEcole = adresseField.getText();
         String emailAutoEcole = emailField.getText();
