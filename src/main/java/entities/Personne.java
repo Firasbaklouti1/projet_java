@@ -1,15 +1,17 @@
 package entities;
 
-public class Personne {
-    String nom;
-    String prenom;
-    int age;
-    String email;
+import java.time.LocalDate;
 
-    public Personne(String nom, String prenom, int age, String email) {
+public class Personne {
+    private String nom;
+    private String prenom;
+    private LocalDate date;
+    private String email;
+
+    public Personne(String nom, String prenom, LocalDate date, String email) {
         this.nom = nom;
         this.prenom = prenom;
-        this.age = age;
+        this.date = date;
         this.email = email;
     }
 
@@ -29,12 +31,12 @@ public class Personne {
         this.prenom = prenom;
     }
 
-    public int getAge() {
-        return age;
+    public LocalDate getDate() {
+        return date;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
     public String getEmail() {

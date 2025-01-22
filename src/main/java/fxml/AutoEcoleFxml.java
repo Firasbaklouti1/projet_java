@@ -7,8 +7,7 @@ import javafx.scene.control.TextField;
 
 public class AutoEcoleFxml {
 
-    @FXML
-    private TextField nomField;
+    @FXML private TextField nomField;
     @FXML private TextField adresseField;
     @FXML private TextField telephoneField;
     @FXML private TextField emailField;
