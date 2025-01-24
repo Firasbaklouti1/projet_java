@@ -4,9 +4,13 @@ module org.example {
     requires mysql.connector.java;
     requires java.sql;
 
-    exports app; // Export the app package
-    exports fxml; // If needed, also export fxml package for FXML files
+    // Export the main application package for use by other modules
+    exports app;
+
+    // Open packages to allow JavaFX reflection for FXML files
     opens fxml to javafx.fxml;
     opens controller to javafx.fxml;
-    exports controller;// Allow reflection for FXML files
+
+    // If reflection is not required for fxml or controller, remove their exports
+    exports controller;
 }
