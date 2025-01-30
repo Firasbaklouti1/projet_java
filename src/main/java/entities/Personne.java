@@ -3,16 +3,34 @@ package entities;
 import java.time.LocalDate;
 
 public class Personne {
+    private int cin;
     private String nom;
     private String prenom;
     private LocalDate date;
     private String email;
 
-    public Personne(String nom, String prenom, LocalDate date, String email) {
+    public Personne(int cin, String nom, String prenom, LocalDate date, String email) {
+        this.cin = cin;
         this.nom = nom;
         this.prenom = prenom;
         this.date = date;
         this.email = email;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public int getCin() {
+        return cin;
+    }
+
+    public void setCin(int cin) {
+        this.cin = cin;
     }
 
     public String getNom() {
@@ -29,14 +47,6 @@ public class Personne {
 
     public void setPrenom(String prenom) {
         this.prenom = prenom;
-    }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
     }
 
     public String getEmail() {

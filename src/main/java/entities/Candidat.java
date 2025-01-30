@@ -1,16 +1,11 @@
 package entities;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Candidat extends Personne {
-    int idCandidat;
-    public Candidat(int idCandidat,String nom, String prenom, int age, String email) {
-        super(nom, prenom, null, email);
-    }
-
-    public int getIdCandidat() {
-        return idCandidat;
-    }
-
-    public void setIdCandidat(int idCandidat) {
-        this.idCandidat = idCandidat;
+    public Candidat(int cin, String nom, String prenom, LocalDate date, String email) {
+        super(cin, nom, prenom, date, email);
     }
 }
