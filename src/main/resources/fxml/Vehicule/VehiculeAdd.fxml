@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<?import java.lang.String?>
+<GridPane hgap="10" prefHeight="344.0" prefWidth="369.0" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="controller.vehicule.VehiculeControllerAdd">
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+
+    <!-- Nouveau champ pour choisir le type de véhicule -->
+    <Label text="Type de Véhicule:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+    <ChoiceBox fx:id="vehiculeTypeChoiceBox" GridPane.columnIndex="1" GridPane.rowIndex="0">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="moto" />
+                <String fx:value="voiture" />
+                <String fx:value="camion" />
+            </FXCollections>
+        </items>
+    </ChoiceBox>
+
+    <!-- Les autres éléments sont décalés d'une ligne -->
+    <Label text="Numéro Matricule:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+    <TextField fx:id="numMatriculeField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+    <Label text="Mise en Service:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <DatePicker fx:id="miseEnServicePicker" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+    <Label text="Kilométrage Total:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+    <TextField fx:id="kilometrageTotaleField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+    <Label text="KM avant Entretien:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+    <TextField fx:id="kmAvantEntretienField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+    <Label text="Date Vignette:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+    <DatePicker fx:id="dateVignettePicker" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+    <Label text="Date Visite Technique:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+    <DatePicker fx:id="dateVisiteTechniquePicker" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+    <Label text="Date Assurance:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+    <DatePicker fx:id="dateAssurancePicker" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+    <Label text="Date Vidange:" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+    <DatePicker fx:id="dateVidangePicker" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+
+    <Label text="Disponible:" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+    <CheckBox fx:id="isDispoCheckBox" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+
+    <Button fx:id="addButton" text="Ajouter" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <!-- Maintenant 11 lignes -->
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+    </rowConstraints>
+</GridPane>

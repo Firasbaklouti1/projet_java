@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+
+<?import java.lang.String?>
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.vehicule.VehiculeControllerMain">
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10" />
+            </padding>
+            <!-- Filter ChoiceBox on the left -->
+            <ChoiceBox fx:id="filterChoiceBox">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="all vehicule" />
+                        <String fx:value="moto" />
+                        <String fx:value="voiture" />
+                        <String fx:value="camion" />
+                    </FXCollections>
+                </items>
+            </ChoiceBox>
+
+            <!-- Spacer to push the notification button to the right -->
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <!-- Notification button with enhanced red badge overlay -->
+            <StackPane>
+                <HBox alignment="CENTER_LEFT" spacing="2"> <!-- Adjust spacing to position label closer -->
+                    <Label fx:id="notificationBadge" text="!" visible="false"
+                           style="-fx-background-color: linear-gradient(to bottom, #ff5f6d, #ffc371);
+                      -fx-text-fill: white;
+                      -fx-font-weight: bold;
+                      -fx-font-size: 11px;
+                      -fx-padding: 3px 6px;
+                      -fx-background-radius: 15px;
+                      -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 2, 0, 0, 1);"/>
+                    <Button fx:id="notificationButton" text="notification" onAction="#handleNotification"/>
+                </HBox>
+            </StackPane>
+
+        </HBox>
+    </top>
+
+    <center>
+        <TableView fx:id="vehiculeTableView" prefHeight="400.0" prefWidth="800.0">
+            <columns>
+                <TableColumn fx:id="colType" prefWidth="100" text="Type">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="type" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="colNumMatricule" prefWidth="100" text="Numéro Matricule">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="numMatricule" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="colMiseEnService" prefWidth="120" text="Mise en Service">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="miseEnService" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="colKilometrageTotale" prefWidth="150" text="Kilométrage Total">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="kilometrageTotale" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="colKmAvantEntretien" prefWidth="150" text="Km Avant Entretien">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="kmAvantEntretien" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="colDateVignette" prefWidth="120" text="Date Vignette">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="dateVignette" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="colDateVisiteTechnique" prefWidth="150" text="Date Visite Technique">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="dateVisiteTechnique" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="colDateAssurance" prefWidth="120" text="Date Assurance">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="dateAssurance" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="colDateVidange" prefWidth="120" text="Date Vidange">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="dateVidange" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="colIsDispo" prefWidth="80" text="Disponible">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="dispo" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <!-- Colonne Actions modifiée avec largeur adaptée -->
+                <TableColumn fx:id="colActions" prefWidth="300" text="Actions">
+                    <!-- La configuration des boutons se fait dans le contrôleur -->
+                </TableColumn>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <Button fx:id="btnAddVehicule" onAction="#handleAddVehicule" text="Ajouter Véhicule" />
+        </HBox>
+    </bottom>
+</BorderPane>

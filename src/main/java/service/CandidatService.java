@@ -15,31 +15,31 @@ import java.sql.Blob;
 import java.util.List;
 
 public class CandidatService {
-    public static void ajouterCandidat(Candidat candidat) {
+    public  void ajouterCandidat(Candidat candidat) {
         CandidatDAO.ajouterCandidat(candidat);
     }
-    public static Candidat getCandidat(int cin) {
+    public  Candidat getCandidat(int cin) {
         return CandidatDAO.getCandidat(cin);
     }
-    public static void updateCandidat(Candidat candidat) {
+    public  void updateCandidat(Candidat candidat) {
         CandidatDAO.updateCandidat(candidat);
     }
-    public static void deleteCandidat(int cin) {
+    public  void deleteCandidat(int cin) {
         CandidatDAO.deleteCandidat(cin);
     }
     public List<Candidat> getAllCandidats(){
         return CandidatDAO.getAllCandidats();
     }
-    public static boolean addDocument(Document document) {
+    public  boolean addDocument(Document document) {
         return DocumentDAO.addDocument(document);
     }
-    public static List<Document> getAllDocuments(int cin) {
+    public  List<Document> getAllDocuments(int cin) {
         return DocumentDAO.getAllDocuments(cin);
     }
-    public static Boolean deleteAllDocuments(int cin) {
+    public  Boolean deleteAllDocuments(int cin) {
         return DocumentDAO.deleteAllDocuments(cin);
     }
-    public static Image convertBlobToImage(Blob imageBlob) {
+    public  Image convertBlobToImage(Blob imageBlob) {
         try {
             // Convertir le Blob en tableau de bytes
             byte[] imageBytes = imageBlob.getBytes(1, (int) imageBlob.length());
@@ -55,7 +55,7 @@ public class CandidatService {
             return null;
         }
     }
-    public static Blob createBlobFromPath(String filePath) {
+    public  Blob createBlobFromPath(String filePath) {
         try {
             // Convert file content to byte array
             Path path = Paths.get(filePath);

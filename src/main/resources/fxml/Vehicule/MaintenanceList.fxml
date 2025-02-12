@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.vehicule.MaintenanceListController">
+
+    <center>
+        <TableView fx:id="maintenanceTable" prefHeight="400">
+            <columns>
+                <!-- Colonne Date -->
+                <TableColumn fx:id="dateColumn" prefWidth="100" text="Date">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="date" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <!-- Colonne Description -->
+                <TableColumn fx:id="descriptionColumn" prefWidth="200" text="Description">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="description" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <!-- Colonne Prix -->
+                <TableColumn fx:id="priceColumn" prefWidth="100" text="Prix">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="price" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <!-- Colonne Facture avec bouton -->
+                <TableColumn fx:id="factureColumn" prefWidth="150" text="Facture">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="facture" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>
