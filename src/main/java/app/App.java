@@ -20,7 +20,7 @@ public class App extends Application {
         primaryStage.show();
     }*/
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Vehicule/VehiculeMain.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Moniteur/Moniteur.fxml"));
         BorderPane root = loader.load();
         Scene scene = new Scene(root);
         primaryStage.setTitle("Auto Ecole");

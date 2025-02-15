@@ -36,7 +36,7 @@ public class VehiculeControllerMaintenance {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Sélectionner la facture");
         selectedFile = fileChooser.showOpenDialog(null);
-        if (selectedFile != null) {
+        if (selectedFile != null && (selectedFile.getName().endsWith(".pdf")|| selectedFile.getName().endsWith(".png"))) {
             fileNameLabel.setText(selectedFile.getName());
         }
     }

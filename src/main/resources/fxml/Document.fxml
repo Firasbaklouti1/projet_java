@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DocumentController">
+    <!-- Define padding using an Insets element -->
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+
+    <Label style="-fx-font-size: 16px;" text="Ajouter Document" />
+
+    <GridPane hgap="10" vgap="10">
+        <!-- Candidate ID (non-editable) -->
+        <Label text="Cin" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="candidatIdField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <!-- Document Name -->
+        <Label text="Nom:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="nomField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <!-- Document Type -->
+        <Label text="Type:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <TextField fx:id="typeField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+        <!-- Date of Addition -->
+        <Label text="Date d'ajout:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <DatePicker fx:id="dateAjoutField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+        <!-- File selection -->
+        <Label text="Fichier:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <Label fx:id="fileNameLabel" text="Aucun fichier sélectionné" />
+            <Button onAction="#handleFileUpload" text="Parcourir" />
+        </HBox>
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
+    </GridPane>
+
+    <!-- Action Buttons -->
+    <HBox spacing="10">
+        <Button onAction="#saveDocument" text="Sauvegarder" />
+        <Button onAction="#handleCancel" text="Annuler" />
+    </HBox>
+</VBox>

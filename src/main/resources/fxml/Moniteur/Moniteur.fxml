@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Moniteur.MoniteurController">
+
+
+    <center>
+        <TableView fx:id="moniteurTableView" prefHeight="355.0" prefWidth="1011.0">
+            <columns>
+                <TableColumn fx:id="colCin" prefWidth="100" text="cin">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="type" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="colNom" prefWidth="100" text="nom">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="numMatricule" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="colPrenom" prefWidth="120" text="prenom">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="miseEnService" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="colDate" prefWidth="120" text="date">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="dateVignette" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="colEmail" prefWidth="120" text="email">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="dateAssurance" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="colSalaire" prefWidth="120" text="salaire">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="dateVidange" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="colIsDispo" prefWidth="80" text="Disponible">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="dispo" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <!-- Colonne Actions modifiée avec largeur adaptée -->
+                <TableColumn fx:id="colActions" prefWidth="370.40008544921875" text="Actions">
+                    <!-- La configuration des boutons se fait dans le contrôleur -->
+                </TableColumn>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <Button fx:id="btnAddMoniteur" onAction="#handleAddMoniteur" text="ajouter moniteur" />
+        </HBox>
+    </bottom>
+</BorderPane>

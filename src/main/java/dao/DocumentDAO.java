@@ -1,6 +1,5 @@
 package dao;
 
-import dao.ConxDB;
 import entities.Document;
 
 import java.sql.*;
@@ -14,9 +13,9 @@ public class DocumentDAO {
 
     // Method to add a new document
     public static boolean addDocument(Document document) {
-        String query = "INSERT INTO document (candidat_id, nom, type, dateAjout, fichier) VALUES (?, ?, ?, ?, ?)";
+        String query = "INSERT INTO document (cin, nom, type, dateAjout, fichier) VALUES (?, ?, ?, ?, ?)";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
-            stmt.setInt(1, document.getCandidatId());
+            stmt.setInt(1, document.getCin());
             stmt.setString(2, document.getNom());
             stmt.setString(3, document.getType());
             stmt.setDate(4, Date.valueOf(document.getDateAjout()));
@@ -39,7 +38,7 @@ public class DocumentDAO {
             if (rs.next()) {
                 Document document = new Document();
                 document.setId(rs.getInt("id"));
-                document.setCandidatId(rs.getInt("candidat_id"));
+                document.setCin(rs.getInt("cin"));
                 document.setNom(rs.getString("nom"));
                 document.setType(rs.getString("type"));
                 document.setDateAjout(rs.getDate("dateAjout").toLocalDate());
@@ -55,9 +54,9 @@ public class DocumentDAO {
 
     // Method to update a document
     public static boolean updateDocument(Document document) {
-        String query = "UPDATE document SET candidat_id = ?, nom = ?, type = ?, dateAjout = ?, fichier = ? WHERE id = ?";
+        String query = "UPDATE document SET cin = ?, nom = ?, type = ?, dateAjout = ?, fichier = ? WHERE id = ?";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
-            stmt.setInt(1, document.getCandidatId());
+            stmt.setInt(1, document.getCin());
             stmt.setString(2, document.getNom());
             stmt.setString(3, document.getType());
             stmt.setDate(4, Date.valueOf(document.getDateAjout()));
@@ -85,17 +84,17 @@ public class DocumentDAO {
         }
     }
 
-    public static List<Document> getAllDocuments(int cin_condidat) {
+    public static List<Document> getAllDocuments(int cin) {
         List<Document> documents = new ArrayList<>();
-        String query = "SELECT * FROM document WHERE candidat_id = ?";
+        String query = "SELECT * FROM document WHERE cin = ?";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
-            stmt.setInt(1, cin_condidat);
+            stmt.setInt(1, cin);
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
                 Document document = new Document();
                 document.setId(rs.getInt("id"));
-                document.setCandidatId(rs.getInt("candidat_id"));
+                document.setCin(rs.getInt("cin"));
                 document.setNom(rs.getString("nom"));
                 document.setType(rs.getString("type"));
                 document.setDateAjout(rs.getDate("dateAjout").toLocalDate());
@@ -107,10 +106,10 @@ public class DocumentDAO {
         }
         return documents;
     }
-    public static Boolean deleteAllDocuments(int cin_condidat) {
+    public static Boolean deleteAllDocuments(int cin) {
         String query = "DELETE FROM document WHERE candidat_id = ?";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
-            stmt.setInt(1, cin_condidat);
+            stmt.setInt(1, cin);
             int rowsDeleted = stmt.executeUpdate();
             return rowsDeleted > 0;
         } catch (SQLException e) {
@@ -118,5 +117,6 @@ public class DocumentDAO {
             return false;
         }
     }
+
 
 }

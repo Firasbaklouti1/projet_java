@@ -20,4 +20,6 @@ module org.example {
     exports controller;
     exports controller.vehicule;
     opens controller.vehicule to javafx.fxml;
+    exports controller.Moniteur;
+    opens controller.Moniteur to javafx.fxml;
 }

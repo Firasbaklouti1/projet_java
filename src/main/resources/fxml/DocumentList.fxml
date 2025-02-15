@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.DocumentListController"
+      spacing="10.0">
+    <padding>
+        <Insets top="10.0" right="10.0" bottom="10.0" left="10.0"/>
+    </padding>
+
+    <Label text="Liste des Documents" style="-fx-font-size: 16px;"/>
+
+    <TableView fx:id="documentTable">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" prefWidth="50.0"/>
+            <TableColumn fx:id="nomColumn" text="Nom" prefWidth="150.0"/>
+            <TableColumn fx:id="typeColumn" text="Type" prefWidth="100.0"/>
+            <TableColumn fx:id="dateAjoutColumn" text="Date d'ajout" prefWidth="120.0"/>
+            <TableColumn fx:id="fichierColumn" text="Fichier" prefWidth="80.0"/>
+        </columns>
+    </TableView>
+</VBox>

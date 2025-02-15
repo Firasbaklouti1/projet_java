@@ -223,7 +223,7 @@ public class VehiculeControllerMain implements Initializable {
                 // Tu peux maintenant ajouter ce véhicule à une liste, une base de données, etc.
             }
             else {
-                System.out.println("ti7che");
+                System.out.println("nop");
             }
             vehiculeService.addVehicule(newVehicule);
             loadVehicules(filterChoiceBox.getValue());
@@ -267,7 +267,7 @@ public class VehiculeControllerMain implements Initializable {
                 // Tu peux maintenant ajouter ce véhicule à une liste, une base de données, etc.
             }
             else {
-                System.out.println("ti7che");
+                System.out.println("error");
             }
             vehiculeService.updateVehicule(newVehicule);
             loadVehicules(filterChoiceBox.getValue());
