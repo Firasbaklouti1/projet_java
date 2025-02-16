@@ -1,4 +1,4 @@
-package controller.Moniteur;
+package controller.moniteur;
 
 import entities.Moniteur;
 import javafx.fxml.FXML;

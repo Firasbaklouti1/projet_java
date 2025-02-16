@@ -1,4 +1,4 @@
-package controller;
+package controller.document;
 
 import entities.Document;
 import javafx.event.ActionEvent;

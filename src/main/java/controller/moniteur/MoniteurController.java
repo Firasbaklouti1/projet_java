@@ -1,6 +1,7 @@
-package controller.Moniteur;
+package controller.moniteur;
 
-import controller.DocumentController;
+import controller.document.DocumentController;
+import controller.document.DocumentListController;
 import entities.Moniteur;
 
 import java.io.IOException;
@@ -223,7 +224,7 @@ public class MoniteurController implements Initializable {
 
     private void handleAddDocument(Moniteur moniteur) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Document.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/document/Document.fxml"));
             Parent root = loader.load();
 
             DocumentController controller = loader.getController();
@@ -241,14 +242,14 @@ public class MoniteurController implements Initializable {
     }
     private void handleShowDocuments(Moniteur moniteur) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/DocumentList.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/document/DocumentList.fxml"));
             Parent root = loader.load();
 
-            controller.DocumentListController controller = loader.getController();
+            DocumentListController controller = loader.getController();
             controller.loadDocuments(moniteur.getCin());
 
             Stage stage = new Stage();
-            stage.setTitle("Maintenances du véhicule " + moniteur.getCin());
+            stage.setTitle("documents du moniteur " + moniteur.getNom());
             stage.setScene(new Scene(root));
             stage.show();
 

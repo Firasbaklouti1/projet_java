@@ -19,7 +19,11 @@ module org.example {
     // If reflection is not required for fxml or controller, remove their exports
     exports controller;
     exports controller.vehicule;
+    exports controller.candidat;
     opens controller.vehicule to javafx.fxml;
-    exports controller.Moniteur;
-    opens controller.Moniteur to javafx.fxml;
+    exports controller.moniteur;
+    opens controller.moniteur to javafx.fxml;
+    opens controller.candidat to javafx.fxml;
+    exports controller.document;
+    opens controller.document to javafx.fxml;
 }

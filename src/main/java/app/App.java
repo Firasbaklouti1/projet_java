@@ -6,7 +6,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class App extends Application {
     @Override
@@ -19,13 +22,12 @@ public class App extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
     }*/
-    public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Moniteur/Moniteur.fxml"));
-        BorderPane root = loader.load();
+    public void start(Stage stage) throws IOException {
+        VBox root =  FXMLLoader.load(getClass().getResource("/fxml/Candidat/Condidat.fxml"));
+
         Scene scene = new Scene(root);
-        primaryStage.setTitle("Auto Ecole");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        stage.setScene(scene);
+        stage.show();
     }
 
     public static void main(String[] args) {

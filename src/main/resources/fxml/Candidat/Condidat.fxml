@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/23.0.1" fx:controller="controller.candidat.CandidatController" xmlns:fx="http://javafx.com/fxml/1">
+    <Button fx:id="btnAddCandidat" mnemonicParsing="false" onAction="#handleAddCandidat" text="Add Candidate" />
+    <TableView fx:id="candidatTableView">
+        <columns>
+            <TableColumn fx:id="colCin" prefWidth="75.0" text="CIN" />
+            <TableColumn fx:id="colNom" prefWidth="150.0" text="Last Name" />
+            <TableColumn fx:id="colPrenom" prefWidth="150.0" text="First Name" />
+            <TableColumn fx:id="colDate" prefWidth="125.0" text="Birth Date" />
+            <TableColumn fx:id="colEmail" prefWidth="200.0" text="Email" />
+            <TableColumn fx:id="colActions" prefWidth="150.0" text="Actions" />
+        </columns>
+    </TableView>
+</VBox>
