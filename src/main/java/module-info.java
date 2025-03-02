@@ -7,7 +7,13 @@ module org.example {
     requires java.desktop;
     requires kernel;
     requires io;
-
+    requires jdk.jsobject;
+    requires javafx.base;
+    requires javafx.graphics;
+    requires javafx.swing;
+    requires javafx.web;
+    requires javafx.media;
+    requires javafx.swt;
     // Export the main application package for use by other modules
     exports app;
 
@@ -26,4 +32,6 @@ module org.example {
     opens controller.candidat to javafx.fxml;
     exports controller.document;
     opens controller.document to javafx.fxml;
+    opens entities.rdv to javafx.base;
+     // For JSObject
 }

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+
+<?import java.lang.String?>
+<GridPane xmlns="http://javafx.com/javafx/17.0.2"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="controller.AddCodeController"
+          hgap="10" vgap="10" prefWidth="400">
+
+    <!-- Permis Type Selection -->
+    <Label text="Type Permis:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <ComboBox fx:id="typePermisCombo" GridPane.columnIndex="1" GridPane.rowIndex="0">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="moto"/>
+                <String fx:value="voiture"/>
+                <String fx:value="camion"/>
+            </FXCollections>
+        </items>
+    </ComboBox>
+
+    <!-- Candidate Selection -->
+    <Label text="CIN Candidat:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <!-- Label displays the selected candidate's CIN -->
+        <Label fx:id="selectedCandidatCinLabel" text="Aucun candidat sélectionné"/>
+        <!-- Button opens the candidate selection dialog -->
+        <Button text="Sélectionner" onAction="#handleSelectCandidate"/>
+    </HBox>
+
+    <!-- Moniteur Selection -->
+    <Label text="CIN Moniteur:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="2">
+        <!-- Label displays the selected moniteur's CIN -->
+        <Label fx:id="selectedMoniteurCinLabel" text="Aucun moniteur sélectionné"/>
+        <!-- Button opens the moniteur selection dialog -->
+        <Button text="Sélectionner" onAction="#handleSelectMoniteur"/>
+    </HBox>
+
+    <!-- Action Buttons -->
+    <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="3">
+        <Button text="Save" onAction="#handleSave"/>
+        <Button text="Cancel" onAction="#handleCancel"/>
+    </HBox>
+
+</GridPane>

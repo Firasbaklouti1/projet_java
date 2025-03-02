@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.GestionRdvConduiteController" spacing="10" prefHeight="400" prefWidth="600">
+
+    <TableView fx:id="rdvTableView" prefHeight="350">
+        <columns>
+            <TableColumn text="Début" prefWidth="150" fx:id="debutCol"/>
+            <TableColumn text="Durée" prefWidth="100" fx:id="dureeCol"/>
+            <TableColumn text="Matricule" prefWidth="100" fx:id="matriculeCol"/>
+            <TableColumn text="Lieu" prefWidth="100" fx:id="lieuCol"/>
+        </columns>
+    </TableView>
+
+    <Button text="Ajouter RDV" onAction="#handleAddRdv" prefWidth="100"/>
+</VBox>

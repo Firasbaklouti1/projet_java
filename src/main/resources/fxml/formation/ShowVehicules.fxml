@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.2"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.ShowVehiculesController"
+      spacing="10" alignment="CENTER" prefWidth="600" prefHeight="400">
+
+    <TableView fx:id="vehiculeTable" prefHeight="300" prefWidth="600">
+        <columns>
+            <TableColumn fx:id="matriculeColumn" text="Matricule" prefWidth="100"/>
+            <TableColumn fx:id="typeColumn" text="Type" prefWidth="150"/>
+            <TableColumn fx:id="miseEnServiceColumn" text="Mise En Service" prefWidth="150"/>
+            <TableColumn fx:id="kilometrageTotaleColumn" text="Kilométrage Total" prefWidth="150"/>
+        </columns>
+    </TableView>
+
+    <Button text="Select" onAction="#handleSelectVehicule"/>
+</VBox>
